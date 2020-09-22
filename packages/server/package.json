@@ -1,0 +1,25 @@
+{
+	"name": "@cato/server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./dist/index.js",
+	"scripts": {
+		"test": "echo \"Running tests in server package\"",
+		"build": "tsc",
+		"watch": "tsc -w",
+		"dev": "nodemon dist/index.js",
+		"start": "node dist/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"@cato/common": "1.0.0"
+	},
+	"devDependencies": {
+		"typescript": "3.4.3",
+		"nodemon": "2.0.4",
+		"@types/express": "^4.17.8"
+	}
+}
