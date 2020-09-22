@@ -1,14 +1,16 @@
 import express from 'express';
 import { add } from '@cato/common';
 
-console.log('hello from the servers page ');
+console.log('hello from the server page ');
 
 const PORT = 5000;
 
 const app = express();
 
-app.get('/hello', (req, res) => {
-	let x = add(4, 5);
+app.disable('etag');
+
+app.get('/hello/:number', (req, res) => {
+	let x = add(4, parseInt(req.params.number), 0);
 	console.log('addind 4 and 5 - ', x);
 	return res.json({ message: x });
 });

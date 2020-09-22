@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    server:
+        build:
+            context: .
+            dockerfile: Dockerfile.server.dev
+        # command: /bin/sh /usr/src/app/packages/server/server-dev.sh
+        # command: ls
+        ports:
+            - '5000:5000'
+        volumes:
+            - /usr/src/app/packages/server/node_modules
+            - /usr/src/app/packages/common/node_modules
+            - ./packages/common/:/usr/src/app/packages/common
+            - ./packages/server/:/usr/src/app/packages/server
+            - ./node_modules/@cato/:/usr/src/app/node_modules/@cato*/
