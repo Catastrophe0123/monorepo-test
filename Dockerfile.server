@@ -4,15 +4,22 @@ WORKDIR /usr/src/app
 
 COPY package.json .
 COPY yarn.lock .
-COPY packages/server ./packages/server
-COPY packages/common ./packages/common
+COPY lerna.json .
+
+COPY packages/server/package*.json ./packages/server/
+COPY packages/common/package*.json ./packages/common/
 
 RUN yarn --pure-lockfile --non-interactive
 
-WORKDIR /usr/src/app/packages/server
-RUN yarn build
+COPY packages/server/ ./packages/server
+COPY packages/common/ ./packages/common
 
-WORKDIR /usr/src/app/packages/common
+# WORKDIR /usr/src/app/packages/server
+# RUN yarn build
+
+# WORKDIR /usr/src/app/packages/common
+# RUN yarn build
+
 RUN yarn build
 
 # production stage
