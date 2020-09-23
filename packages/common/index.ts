@@ -1,4 +1,4 @@
-export const add = (a: number, b: number, c: number) => {
+export const add = (a: number, b: number) => {
 	console.log('im running over here');
-	return a + b + c;
+	return a - b;
 };

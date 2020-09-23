@@ -7,7 +7,7 @@ class App extends React.Component {
 	state = { number: 0 };
 
 	componentDidMount = () => {
-		let x = add(5, 4);
+		let x = add(5, 1000);
 		this.setState({ number: x });
 	};
 
